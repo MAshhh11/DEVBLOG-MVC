@@ -1,6 +1,8 @@
-<!-- environnement de prod -->
-
 <?php
+
+/**
+ * environnement de prod
+ */
 
     const HOST = 'localhost';
     const DB_NAME = 'devblog';

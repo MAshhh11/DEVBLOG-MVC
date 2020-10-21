@@ -28,20 +28,20 @@
     <div class="row mt-5">
     <?php
         
-        while ($a_m=$articles->fetch()) {
+        foreach ($articles as $article) {
             ?>
     <div class="col-6">
             <div class="card">
                 <div class="card-header">
-                    <h2><?= $a_m->title; ?></h2>
+                    <h2><?= $article->getTitle(); ?></h2>
                 </div>
                 <div class="card-body " style="height: 200px;">
-                    <p><?= $a_m->content; ?></p>
-                    <p><?= $a_m->author; ?></p>
-                    <p><?= $a_m->createdAt; ?></p>
+                    <p><?= $article->getContent(); ?></p>
+                    <p><?= $article->getAuthor(); ?></p>
+                    <p><?= $article->getCreatedAt(); ?></p>
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-info" href="../public/index.php?route=article&articleId=<?= $a_m->id ; ?>">Voir</a>
+                    <a class="btn btn-info" href="../public/index.php?route=article&articleId=<?= $article->getId(); ?>">Voir</a>
                 </div>
             </div>
     </div>

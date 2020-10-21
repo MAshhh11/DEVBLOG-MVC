@@ -1,4 +1,7 @@
 <?php
+/**
+ * environnement de dev
+ */
 
     const HOST = 'localhost';
     const DB_NAME = 'devblog';

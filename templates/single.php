@@ -27,42 +27,36 @@
     </div>
 
     <a href="../public/index.php" class="btn btn-info mt-4 mb-4">Retour à l'accueil</a>
-    <?php
-        
-        $a_m=$articles->fetch();
-            ?>
+    
     <div class="card">
 
-        <h2 class="card-header"><?= $a_m->title ; ?>
+        <h2 class="card-header"><?= $article->getTitle(); ?>
         </h2>
         <div class="card-body">
-        <p><?= $a_m->content ; ?>
+        <p><?= $article->getContent(); ?>
         </p>
-        <p><?= $a_m->author ; ?>
+        <p><?= $article->getAuthor(); ?>
         </p>
-        <p><?= $a_m->createdAt ; ?>
+        <p><?= $article->getCreatedAt(); ?>
         </p>
         </div>
     </div>
-    <?php
-        $articles->closeCursor();
-    ?>
+    
     <div class="card mt-3" id="comments">
         <h3 class="card-header">Commentaires</h3>
         <div class="card-body">
         <?php
             
-            while ($comment = $comments->fetch()) {
+            foreach ($comments as $comment) {
                 ?>
-        <h4><?= $comment->id_user ?>
+        <h4><?= $comment->getIdUser(); ?>
         </h4>
-        <p><?= $comment->content ?>
+        <p><?= $comment->getContent(); ?>
         </p>
-        <p><?= $comment->createdAt ?>
+        <p><?= $comment->getCreatedAt(); ?>
         </p>
         <?php
             }
-            $comments->closeCursor();
         ?>
         </div>
     </div>
